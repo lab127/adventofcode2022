@@ -28,6 +28,7 @@ const maxCalory = (calories: number[]) => {
 
 console.log("part 1:", maxCalory(inputArr));
 
+// use sort(), should be used this in part 1 also
 let maxThree = inputArr
   .sort((a, b) => b - a)
   .slice(0, 3)
