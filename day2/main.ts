@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
+// PART 1
 const inputFile = fs.readFileSync(
   path.resolve(__dirname, "./input.txt"),
   "utf-8"
@@ -38,9 +39,8 @@ const gameScore = {
   "scissor scissor": 3 + 3,
 };
 
-// key as string
 const arr = results(toArray);
-let newArr = [];
+// key as string
 const objScoreKeys = Object.keys(gameScore);
 let totalScore = 0;
 for (let i = 0; i < arr.length; i++) {
