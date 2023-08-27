@@ -29,8 +29,22 @@ let total = 0;
 for (let i = 0; i < rucksacks.length; i++) {
   const rucksack = rucksacks[i];
   let count = alphabet.indexOf(itemInBothCompartments(rucksack)[0]);
-  total += count;
+  total += count + 1;
 }
 
-// masih salah
 console.log(total);
+
+// versi 2 loop memang lebih joss
+let sumTotal = 0;
+for (let i = 0; i < rucksacks.length; i++) {
+  let comp1 = rucksacks[i].slice(0, rucksacks[i].length / 2);
+  let comp2 = rucksacks[i].slice(rucksacks[i].length / 2, rucksacks[i].length);
+  for (let j = 0; j < comp1.length; j++) {
+    if (comp1.includes(comp2[j])) {
+      sumTotal += alphabet.indexOf(comp2[j]) + 1;
+      break;
+    }
+  }
+}
+
+console.log("sumTotal ", sumTotal);
